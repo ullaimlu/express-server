@@ -28,6 +28,11 @@ app.get("/:name", (req, res) => {
     res.send("Hello " + req.params.name);
 });
 
+app.get("/fetchMonth/:num", (req, res) => {
+    const months = ['January', 'February', 'March', 'April', 'May','June','July', 'August', 'September','October','November','December'];
+    res.send("The month number " + req.params.num + " is " + months[req.params.num-1]);
+});
+
 // Start the server and listen on port 3333
 app.listen(3333, () => {
     console.log(`Listening at http://localhost:3333`);
